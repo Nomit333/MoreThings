@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "morethings:steel_ore"
+  },
+  "result": "morethings:steel_ingot",
+  "experience": 1.5,
+  "cookingtime": 350
+}

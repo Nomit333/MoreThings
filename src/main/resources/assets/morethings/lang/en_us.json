@@ -1,0 +1,34 @@
+{
+  "item.morethings.copper_ingot": "Copper Ingot",
+  "item.morethings.steel_ingot": "Steel Ingot",
+
+  "block.morethings.copper_block": "Block of Copper",
+  "block.morethings.copper_ore": "Copper Ore",
+
+  "block.morethings.steel_block": "Block of Steel",
+  "block.morethings.steel_ore": "Steel Ore",
+
+  "item.morethings.copper_sword": "Copper Sword",
+  "item.morethings.copper_pickaxe": "Copper Pickaxe",
+  "item.morethings.copper_axe": "Copper Axe",
+  "item.morethings.copper_shovel": "Copper Shovel",
+  "item.morethings.copper_hoe": "Copper Hoe",
+
+  "item.morethings.copper_helmet": "Copper Helmet",
+  "item.morethings.copper_chestplate": "Copper Chestplate",
+  "item.morethings.copper_leggings": "Copper Leggings",
+  "item.morethings.copper_boots": "Copper Boots",
+
+  "item.morethings.steel_sword": "Steel Sword",
+  "item.morethings.steel_pickaxe": "Steel Pickaxe",
+  "item.morethings.steel_axe": "Steel Axe",
+  "item.morethings.steel_shovel": "Steel Shovel",
+  "item.morethings.steel_hoe": "Steel Hoe",
+
+  "item.morethings.steel_helmet": "Steel Helmet",
+  "item.morethings.steel_chestplate": "Steel Chestplate",
+  "item.morethings.steel_leggings": "Steel Leggings",
+  "item.morethings.steel_boots": "Steel Boots",
+
+  "itemGroup.MoreThings": "More Things"
+}

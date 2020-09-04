@@ -1,0 +1,27 @@
+modLoader="javafml" #mandatory
+loaderVersion="[31,)" #mandatory
+issueTrackerURL="http://my.issue.tracker/" #optional
+[[mods]] #mandatory
+modId="morethings" #mandatory
+version="1.16.1-1.0.0" #mandatory
+displayName="More Things" #mandatory
+updateJSONURL="http://myurl.me/" #optional
+displayURL="http://example.com/" #optional
+logoFile="examplemod.png" #optional
+credits="Yeet!" #optional
+authors="Timon Wegner" #optional
+description='''
+This Mod brings more Ores and just more stuff to minecraft
+'''
+[[dependencies.morethings]] #optional
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[31,)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.examplemod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.15.2]"
+    ordering="NONE"
+    side="BOTH"

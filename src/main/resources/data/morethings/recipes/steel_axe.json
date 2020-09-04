@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "CC ",
+    "CS ",
+    " S "
+  ],
+  "key":
+  {
+    "C":
+    {
+      "item": "morethings:steel_ingot"
+    },
+    "S":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "morethings:copper_axe",
+    "count": 1
+  }
+}
