@@ -1,6 +1,6 @@
 modLoader="javafml" #mandatory
 loaderVersion="[31,)" #mandatory
-issueTrackerURL="http://my.issue.tracker/" #optional
+issueTrackerURL="https://github.com/Nomit333/MoreThings/issues" #optional
 [[mods]] #mandatory
 modId="morethings" #mandatory
 version="1.16.1-1.0.0" #mandatory
@@ -8,7 +8,7 @@ displayName="More Things" #mandatory
 updateJSONURL="http://myurl.me/" #optional
 displayURL="http://example.com/" #optional
 logoFile="examplemod.png" #optional
-credits="Yeet!" #optional
+credits="Thanks to the many hours of killing me inside" #optional
 authors="Timon Wegner" #optional
 description='''
 This Mod brings more Ores and just more stuff to minecraft
