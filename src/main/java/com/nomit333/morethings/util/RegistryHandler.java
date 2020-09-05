@@ -36,5 +36,6 @@ public class RegistryHandler {
     public static final RegistryObject<Item> STEEL_BLOCK_ITEM = ITEMS.register("steel_block", () -> new BlockItemBase(STEEL_BLOCK.get()));
     public static final RegistryObject<Item> STEEL_ORE_ITEM = ITEMS.register("steel_ore", () -> new BlockItemBase(STEEL_ORE.get()));
     public static final RegistryObject<Item> COPPER_ORE_ITEM = ITEMS.register("copper_ore", () -> new BlockItemBase(COPPER_ORE.get()));
+    public static final RegistryObject<Item> ARC_FURNACE_ITEM = ITEMS.register("arc_furnace", () -> new BlockItemBase(ARC_FURNACE.get()));
 
 }
