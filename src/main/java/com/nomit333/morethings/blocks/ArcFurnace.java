@@ -22,48 +22,59 @@ public class ArcFurnace extends Block {
 
     private static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
 
+    private static final VoxelShape SHAPE_D = Stream.of(
+            Block.makeCuboidShape(4, 9, -4, 12, 10, 2), Block.makeCuboidShape(0, 0, 0, 16, 9, 16),
+            Block.makeCuboidShape(0, 9, 0, 16, 10, 16), Block.makeCuboidShape(0, 16, 0, 16, 18, 16),
+            Block.makeCuboidShape(1, 18, 1, 15, 19, 15), Block.makeCuboidShape(1, 19, 1, 15, 20, 15),
+            Block.makeCuboidShape(0, 10, 6, 16, 16, 16), Block.makeCuboidShape(12, 10, 0, 16, 16, 6),
+            Block.makeCuboidShape(0, 10, 0, 4, 16, 6), Block.makeCuboidShape(4, 10, 1, 12, 16, 3),
+            Block.makeCuboidShape(4, 10, 0, 12, 16, 2), Block.makeCuboidShape(10, 20, 8, 12, 28, 14),
+            Block.makeCuboidShape(6, 20, 8, 10, 28, 10), Block.makeCuboidShape(6, 20, 10, 10, 20, 12),
+            Block.makeCuboidShape(4, 20, 8, 6, 28, 14), Block.makeCuboidShape(6, 20, 12, 10, 28, 14)
+    ).reduce((v1, v2) -> {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
+
     private static final VoxelShape SHAPE_N = Stream.of(
-            Block.makeCuboidShape(7, 11, 7, 8, 15, 10), Block.makeCuboidShape(3, 0, 3, 13, 6, 13),
-            Block.makeCuboidShape(4, 6, 4, 12, 6.5, 12), Block.makeCuboidShape(4, 9.5, 4, 12, 10.5, 12),
-            Block.makeCuboidShape(4, 6.5, 7, 12, 9.5, 12), Block.makeCuboidShape(10, 6.5, 4, 12, 9.5, 7),
-            Block.makeCuboidShape(6, 6.5, 4, 10, 9.5, 5), Block.makeCuboidShape(4, 6.5, 4, 6, 9.5, 7),
-            Block.makeCuboidShape(6, 6, 1, 10, 6.5, 4), Block.makeCuboidShape(4.5, 10.5, 4.5, 11.5, 11, 11.5),
-            Block.makeCuboidShape(4.5, 11, 4.5, 11.5, 11.5, 11.5), Block.makeCuboidShape(9, 11, 7, 10, 15, 10),
-            Block.makeCuboidShape(8, 11, 7, 9, 15, 8), Block.makeCuboidShape(8, 11, 9, 9, 15, 10),
-            Block.makeCuboidShape(6, 6.5, 5, 10, 9.5, 7), Block.makeCuboidShape(8, 12, 8, 9, 12, 9)
+            Block.makeCuboidShape(4, 9, -4, 12, 10, 2), Block.makeCuboidShape(0, 0, 0, 16, 9, 16),
+            Block.makeCuboidShape(0, 9, 0, 16, 10, 16), Block.makeCuboidShape(0, 16, 0, 16, 18, 16),
+            Block.makeCuboidShape(1, 18, 1, 15, 19, 15), Block.makeCuboidShape(1, 19, 1, 15, 20, 15),
+            Block.makeCuboidShape(0, 10, 6, 16, 16, 16), Block.makeCuboidShape(12, 10, 0, 16, 16, 6),
+            Block.makeCuboidShape(0, 10, 0, 4, 16, 6), Block.makeCuboidShape(4, 10, 1, 12, 16, 3),
+            Block.makeCuboidShape(4, 10, 0, 12, 16, 2), Block.makeCuboidShape(10, 20, 8, 12, 28, 14),
+            Block.makeCuboidShape(6, 20, 8, 10, 28, 10), Block.makeCuboidShape(6, 20, 10, 10, 20, 12),
+            Block.makeCuboidShape(4, 20, 8, 6, 28, 14), Block.makeCuboidShape(6, 20, 12, 10, 28, 14)
     ).reduce((v1, v2) -> {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
 
     private static final VoxelShape SHAPE_E = Stream.of(
-            Block.makeCuboidShape(5.40625, 11, 6.09375, 8.40625, 15, 7.09375), Block.makeCuboidShape(2.40625, 0, 2.09375, 12.40625, 6, 12.09375),
-            Block.makeCuboidShape(3.40625, 6, 3.09375, 11.40625, 6.5, 11.09375), Block.makeCuboidShape(3.40625, 9.5, 3.09375, 11.40625, 10.5, 11.09375),
-            Block.makeCuboidShape(3.40625, 6.5, 3.09375, 8.40625, 9.5, 11.09375), Block.makeCuboidShape(8.40625, 6.5, 9.09375, 11.40625, 9.5, 11.09375),
-            Block.makeCuboidShape(10.40625, 6.5, 5.09375, 11.40625, 9.5, 9.09375), Block.makeCuboidShape(8.40625, 6.5, 3.09375, 11.40625, 9.5, 5.09375),
-            Block.makeCuboidShape(11.40625, 6, 5.09375, 14.40625, 6.5, 9.09375), Block.makeCuboidShape(3.90625, 10.5, 3.59375, 10.90625, 11, 10.59375),
-            Block.makeCuboidShape(3.90625, 11, 3.59375, 10.90625, 11.5, 10.59375), Block.makeCuboidShape(5.40625, 11, 8.09375, 8.40625, 15, 9.09375),
-            Block.makeCuboidShape(7.40625, 11, 7.09375, 8.40625, 15, 8.09375), Block.makeCuboidShape(5.40625, 11, 7.09375, 6.40625, 15, 8.09375),
-            Block.makeCuboidShape(8.40625, 6.5, 5.09375, 10.40625, 9.5, 9.09375), Block.makeCuboidShape(6.40625, 12, 7.09375, 7.40625, 12, 8.09375)
+            Block.makeCuboidShape(14.125, 9, 4.125, 20.125, 10, 12.125), Block.makeCuboidShape(0.125, 0, 0.125, 16.125, 9, 16.125),
+            Block.makeCuboidShape(0.125, 9, 0.125, 16.125, 10, 16.125), Block.makeCuboidShape(0.125, 16, 0.125, 16.125, 18, 16.125),
+            Block.makeCuboidShape(1.125, 18, 1.125, 15.125, 19, 15.125), Block.makeCuboidShape(1.125, 19, 1.125, 15.125, 20, 15.125),
+            Block.makeCuboidShape(0.125, 10, 0.125, 10.125, 16, 16.125), Block.makeCuboidShape(10.125, 10, 12.125, 16.125, 16, 16.125),
+            Block.makeCuboidShape(10.125, 10, 0.125, 16.125, 16, 4.125), Block.makeCuboidShape(13.125, 10, 4.125, 15.125, 16, 12.125),
+            Block.makeCuboidShape(14.125, 10, 4.125, 16.125, 16, 12.125), Block.makeCuboidShape(2.125, 20, 10.125, 8.125, 28, 12.125),
+            Block.makeCuboidShape(6.125, 20, 6.125, 8.125, 28, 10.125), Block.makeCuboidShape(4.125, 20, 6.125, 6.125, 20, 10.125),
+            Block.makeCuboidShape(2.125, 20, 4.125, 8.125, 28, 6.125), Block.makeCuboidShape(2.125, 20, 6.125, 4.125, 28, 10.125)
     ).reduce((v1, v2) -> {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
 
     private static final VoxelShape SHAPE_S = Stream.of(
-            Block.makeCuboidShape(8.3125, 11, 4.5, 9.3125, 15, 7.5), Block.makeCuboidShape(3.3125, 0, 1.5, 13.3125, 6, 11.5),
-            Block.makeCuboidShape(4.3125, 6, 2.5, 12.3125, 6.5, 10.5), Block.makeCuboidShape(4.3125, 9.5, 2.5, 12.3125, 10.5, 10.5),
-            Block.makeCuboidShape(4.3125, 6.5, 2.5, 12.3125, 9.5, 7.5), Block.makeCuboidShape(4.3125, 6.5, 7.5, 6.3125, 9.5, 10.5),
-            Block.makeCuboidShape(6.3125, 6.5, 9.5, 10.3125, 9.5, 10.5), Block.makeCuboidShape(10.3125, 6.5, 7.5, 12.3125, 9.5, 10.5),
-            Block.makeCuboidShape(6.3125, 6, 10.5, 10.3125, 6.5, 13.5), Block.makeCuboidShape(4.8125, 10.5, 3, 11.8125, 11, 10),
-            Block.makeCuboidShape(4.8125, 11, 3, 11.8125, 11.5, 10), Block.makeCuboidShape(6.3125, 11, 4.5, 7.3125, 15, 7.5),
-            Block.makeCuboidShape(7.3125, 11, 6.5, 8.3125, 15, 7.5), Block.makeCuboidShape(7.3125, 11, 4.5, 8.3125, 15, 5.5),
-            Block.makeCuboidShape(6.3125, 6.5, 7.5, 10.3125, 9.5, 9.5), Block.makeCuboidShape(7.3125, 12, 5.5, 8.3125, 12, 6.5)
+            Block.makeCuboidShape(4, 9, 14.25, 12, 10, 20.25), Block.makeCuboidShape(0, 0, 0.25, 16, 9, 16.25),
+            Block.makeCuboidShape(0, 9, 0.25, 16, 10, 16.25), Block.makeCuboidShape(0, 16, 0.25, 16, 18, 16.25),
+            Block.makeCuboidShape(1, 18, 1.25, 15, 19, 15.25), Block.makeCuboidShape(1, 19, 1.25, 15, 20, 15.25),
+            Block.makeCuboidShape(0, 10, 0.25, 16, 16, 10.25), Block.makeCuboidShape(0, 10, 10.25, 4, 16, 16.25),
+            Block.makeCuboidShape(12, 10, 10.25, 16, 16, 16.25), Block.makeCuboidShape(4, 10, 13.25, 12, 16, 15.25),
+            Block.makeCuboidShape(4, 10, 14.25, 12, 16, 16.25), Block.makeCuboidShape(4, 20, 2.25, 6, 28, 8.25),
+            Block.makeCuboidShape(6, 20, 6.25, 10, 28, 8.25), Block.makeCuboidShape(6, 20, 4.25, 10, 20, 6.25),
+            Block.makeCuboidShape(10, 20, 2.25, 12, 28, 8.25), Block.makeCuboidShape(6, 20, 2.25, 10, 28, 4.25)
     ).reduce((v1, v2) -> {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
 
     private static final VoxelShape SHAPE_W = Stream.of(
-            Block.makeCuboidShape(7.90625, 11, 7.40625, 10.90625, 15, 8.40625), Block.makeCuboidShape(3.90625, 0, 2.40625, 13.90625, 6, 12.40625),
-            Block.makeCuboidShape(4.90625, 6, 3.40625, 12.90625, 6.5, 11.40625), Block.makeCuboidShape(4.90625, 9.5, 3.40625, 12.90625, 10.5, 11.40625),
-            Block.makeCuboidShape(7.90625, 6.5, 3.40625, 12.90625, 9.5, 11.40625), Block.makeCuboidShape(4.90625, 6.5, 3.40625, 7.90625, 9.5, 5.40625),
-            Block.makeCuboidShape(4.90625, 6.5, 5.40625, 5.90625, 9.5, 9.40625), Block.makeCuboidShape(4.90625, 6.5, 9.40625, 7.90625, 9.5, 11.40625),
-            Block.makeCuboidShape(1.90625, 6, 5.40625, 4.90625, 6.5, 9.40625), Block.makeCuboidShape(5.40625, 10.5, 3.90625, 12.40625, 11, 10.90625),
-            Block.makeCuboidShape(5.40625, 11, 3.90625, 12.40625, 11.5, 10.90625), Block.makeCuboidShape(7.90625, 11, 5.40625, 10.90625, 15, 6.40625),
-            Block.makeCuboidShape(7.90625, 11, 6.40625, 8.90625, 15, 7.40625), Block.makeCuboidShape(9.90625, 11, 6.40625, 10.90625, 15, 7.40625),
-            Block.makeCuboidShape(5.90625, 6.5, 5.40625, 7.90625, 9.5, 9.40625), Block.makeCuboidShape(8.90625, 12, 6.40625, 9.90625, 12, 7.40625)
+            Block.makeCuboidShape(-4.125, 9, 4.125, 1.875, 10, 12.125), Block.makeCuboidShape(-0.125, 0, 0.125, 15.875, 9, 16.125),
+            Block.makeCuboidShape(-0.125, 9, 0.125, 15.875, 10, 16.125), Block.makeCuboidShape(-0.125, 16, 0.125, 15.875, 18, 16.125),
+            Block.makeCuboidShape(0.875, 18, 1.125, 14.875, 19, 15.125), Block.makeCuboidShape(0.875, 19, 1.125, 14.875, 20, 15.125),
+            Block.makeCuboidShape(5.875, 10, 0.125, 15.875, 16, 16.125), Block.makeCuboidShape(-0.125, 10, 0.125, 5.875, 16, 4.125),
+            Block.makeCuboidShape(-0.125, 10, 12.125, 5.875, 16, 16.125), Block.makeCuboidShape(0.875, 10, 4.125, 2.875, 16, 12.125),
+            Block.makeCuboidShape(-0.125, 10, 4.125, 1.875, 16, 12.125), Block.makeCuboidShape(7.875, 20, 4.125, 13.875, 28, 6.125),
+            Block.makeCuboidShape(7.875, 20, 6.125, 9.875, 28, 10.125), Block.makeCuboidShape(9.875, 20, 6.125, 11.875, 20, 10.125),
+            Block.makeCuboidShape(7.875, 20, 10.125, 13.875, 28, 12.125), Block.makeCuboidShape(11.875, 20, 6.125, 13.875, 28, 10.125)
     ).reduce((v1, v2) -> {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
 
     public ArcFurnace() {
@@ -88,7 +99,7 @@ public class ArcFurnace extends Block {
             case WEST:
                 return SHAPE_W;
             default:
-                return SHAPE_N;
+                return SHAPE_D;
         }
     }
 
