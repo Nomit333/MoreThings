@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "morethings:blocks/oven",
-		"particle": "morethings:blocks/oven"
+		"0": "morethings:blocks/arc_furnace",
+		"particle": "morethings:blocks/arc_furnace"
 	},
 	"elements": [
 		{
