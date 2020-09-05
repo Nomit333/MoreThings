@@ -1,8 +1,0 @@
-{
-  "variants": {
-    "facing=north": { "model": "morethings:block/oven" },
-    "facing=south": { "model": "morethings:block/oven", "y":  180},
-    "facing=west": { "model": "morethings:block/oven", "y":  270},
-    "facing=east": { "model": "morethings:block/oven", "y":  90}
-  }
-}
